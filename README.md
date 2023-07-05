@@ -28,24 +28,15 @@ A Flutter application that displays trending movies, popular movies, top-rated m
 
 ## Screenshots
 
-![Screenshot 1](https://github.com/niranjandahal/MovieApp_Flutter/blob/main/flutter_01.jpg)
-
-![Screenshot 2](https://github.com/niranjandahal/MovieApp_Flutter/blob/main/flutter_02.jpg)
-
-![Screenshot 3](https://github.com/niranjandahal/MovieApp_Flutter/blob/main/flutter_03.jpg)
-
-![Screenshot 4](https://github.com/niranjandahal/MovieApp_Flutter/blob/main/flutter_04.jpg)
-
-![Screenshot 5](https://github.com/niranjandahal/MovieApp_Flutter/blob/main/flutter_05.jpg)
-
-![Screenshot 6](https://github.com/niranjandahal/MovieApp_Flutter/blob/main/flutter_06.jpg)
-
-![Screenshot 7](https://github.com/niranjandahal/MovieApp_Flutter/blob/main/flutter_07.jpg)
-
-![Screenshot 8](https://github.com/niranjandahal/MovieApp_Flutter/blob/main/flutter_08.jpg)
-
-![Screenshot 9](https://github.com/niranjandahal/MovieApp_Flutter/blob/main/flutter_09.jpg)
-
+<img src="https://github.com/niranjandahal/MovieApp_Flutter/blob/main/flutter_01.jpg" width="300">
+<img src="https://github.com/niranjandahal/MovieApp_Flutter/blob/main/flutter_02.jpg" width="300">
+<img src="https://github.com/niranjandahal/MovieApp_Flutter/blob/main/flutter_03.jpg" width="300">
+<img src="https://github.com/niranjandahal/MovieApp_Flutter/blob/main/flutter_04.jpg" width="300">
+<img src="https://github.com/niranjandahal/MovieApp_Flutter/blob/main/flutter_05.jpg" width="300">
+<img src="https://github.com/niranjandahal/MovieApp_Flutter/blob/main/flutter_06.jpg" width="300">
+<img src="https://github.com/niranjandahal/MovieApp_Flutter/blob/main/flutter_07.jpg" width="300">
+<img src="https://github.com/niranjandahal/MovieApp_Flutter/blob/main/flutter_08.jpg" width="300">
+<img src="https://github.com/niranjandahal/MovieApp_Flutter/blob/main/flutter_09.jpg" width="300">
 
 
 ## Features
