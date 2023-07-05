@@ -1,10 +1,7 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:r08fullmovieapp/SqfLitelocalstorage/NoteDbHelper.dart';
-
 import 'package:r08fullmovieapp/RepeatedFunction/repttext.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
