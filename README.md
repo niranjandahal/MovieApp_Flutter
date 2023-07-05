@@ -1,10 +1,10 @@
 ### Movie Hunt
 
-A Flutter Project 'Movie App' made using TMDB API.
+# A Flutter Project 'Movie App' made using TMDB API.
 
 ## Getting Started
 
-You will need a developer account with TMDB, which will provide you an API key. With the API key, we will be able to fetch real-time JSON data of movies from selected categories like:
+# You will need a developer account with TMDB, which will provide you an API key. With the API key, we will be able to fetch real-time data of movie/series
 
 ## features
 - Watch trailers of new movies/series
@@ -28,15 +28,15 @@ A Flutter application that displays trending movies, popular movies, top-rated m
 
 ## Screenshots
 
-![Screenshot 1](https://github.com/niranjandahal/Flutter_Moive_fullapp/blob/main/flutter_01.png)
+![Screenshot 1](https://github.com/niranjandahal/MovieApp_Flutter/blob/main/flutter_01.png)
 
-![Screenshot 2](https://github.com/niranjandahal/Flutter_Moive_fullapp/blob/main/flutter_05.png)
+![Screenshot 2](https://github.com/niranjandahal/MovieApp_Flutter/blob/main/flutter_05.png)
 
-![Screenshot 3](https://github.com/niranjandahal/Flutter_Moive_fullapp/blob/main/flutter_06.png)
+![Screenshot 3](https://github.com/niranjandahal/MovieApp_Flutter/blob/main/flutter_06.png)
 
-![Screenshot 4](https://github.com/niranjandahal/Flutter_Moive_fullapp/blob/main/flutter_08.png)
+![Screenshot 4](https://github.com/niranjandahal/MovieApp_Flutter/blob/main/flutter_08.png)
 
-![Screenshot 5](https://github.com/niranjandahal/Flutter_Moive_fullapp/blob/main/flutter_10.png)
+![Screenshot 5](https://github.com/niranjandahal/MovieApp_Flutter/blob/main/flutter_10.png)
 
 
 ## Features
