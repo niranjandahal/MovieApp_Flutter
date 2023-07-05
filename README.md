@@ -1,10 +1,10 @@
 ### Movie Hunt
 
-# A Flutter Project 'Movie App' made using TMDB API.
+A Flutter Project 'Movie App' made using TMDB API.
 
 ## Getting Started
 
-# You will need a developer account with TMDB, which will provide you an API key. With the API key, we will be able to fetch real-time data of movie/series
+You will need a developer account with TMDB, which will provide you an API key. With the API key, we will be able to fetch real-time data of movie/series
 
 ## features
 - Watch trailers of new movies/series
