@@ -38,7 +38,7 @@ Widget errorui(context) {
       title: const Text('Error'),
     ),
     body: Center(
-      child: Text('dfsa'),
+      child: Text('no Such page found'),
     ),
   );
 }

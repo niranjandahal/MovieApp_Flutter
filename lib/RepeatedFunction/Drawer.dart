@@ -26,25 +26,25 @@ class _drawerfuncState extends State<drawerfunc> {
   File? _image;
 
   Future<void> SelectImage() async {
-    final pickedfile =
-        await ImagePicker().getImage(source: ImageSource.gallery);
-    if (pickedfile != null) {
-      CroppedFile? cropped = await ImageCropper().cropImage(
-        sourcePath: pickedfile.path,
-        aspectRatioPresets: [
-          CropAspectRatioPreset.square,
-          CropAspectRatioPreset.ratio3x2,
-          CropAspectRatioPreset.original,
-          CropAspectRatioPreset.ratio4x3,
-          CropAspectRatioPreset.ratio16x9
-        ],
-      );
-      SharedPreferences sp = await SharedPreferences.getInstance();
-      sp.setString('imagepath', cropped!.path);
-      _image = cropped as File?;
-    } else {
-      print('No image selected.');
-    }
+    // final pickedfile =
+    //     await ImagePicker().(source: ImageSource.gallery);
+    // if (pickedfile != null) {
+    //   CroppedFile? cropped = await ImageCropper().cropImage(
+    //     sourcePath: pickedfile.path,
+    //     aspectRatioPresets: [
+    //       CropAspectRatioPreset.square,
+    //       CropAspectRatioPreset.ratio3x2,
+    //       CropAspectRatioPreset.original,
+    //       CropAspectRatioPreset.ratio4x3,
+    //       CropAspectRatioPreset.ratio16x9
+    //     ],
+    //   );
+    //   SharedPreferences sp = await SharedPreferences.getInstance();
+    //   sp.setString('imagepath', cropped!.path);
+    //   _image = cropped as File?;
+    // } else {
+    //   print('No image selected.');
+    // }
   }
 
   @override
@@ -115,15 +115,20 @@ class _drawerfuncState extends State<drawerfunc> {
                   context,
                   MaterialPageRoute(
                       builder: (context) => Scaffold(
-                            backgroundColor: Color.fromRGBO(18, 18, 18, 0.5),
-                            appBar: AppBar(
-                              backgroundColor: Color.fromRGBO(18, 18, 18, 0.9),
-                              title: Text('Our Blogs'),
-                            ),
-                            body: WebView(
-                              initialUrl: 'https://niranjandahal.com.np/',
-                              javascriptMode: JavascriptMode.unrestricted,
-                            ),
+                          backgroundColor: Color.fromRGBO(18, 18, 18, 0.5),
+                          appBar: AppBar(
+                            backgroundColor: Color.fromRGBO(18, 18, 18, 0.9),
+                            title: Text('Our Blogs'),
+                          ),
+                          body: WebViewWidget(controller: WebViewController(
+                             
+                             
+                          ),)
+
+                          // body: WebView(
+                          //   initialUrl: 'https://niranjandahal.com.np/',
+                          //   javascriptMode: JavascriptMode.unrestricted,
+                          // ),
                           )));
             }),
             listtilefunc('Our Website', FontAwesomeIcons.solidNewspaper,
@@ -137,11 +142,11 @@ class _drawerfuncState extends State<drawerfunc> {
                               backgroundColor: Color.fromRGBO(18, 18, 18, 0.9),
                               title: Text('Our Website'),
                             ),
-                            body: WebView(
-                              initialUrl:
-                                  'https://niranjandahalyt.blogspot.com/',
-                              javascriptMode: JavascriptMode.unrestricted,
-                            ),
+                            // body: WebView(
+                            //   initialUrl:
+                            //       'https://niranjandahalyt.blogspot.com/',
+                            //   javascriptMode: JavascriptMode.unrestricted,
+                            // ),
                           )));
             }),
             listtilefunc('Subscribe US', FontAwesomeIcons.youtube,

@@ -17,7 +17,6 @@ class _TvSeriesState extends State<TvSeries> {
   List<Map<String, dynamic>> onairtvseries = [];
   var populartvseriesurl =
       'https://api.themoviedb.org/3/tv/popular?api_key=$apikey';
-
   var topratedtvseriesurl =
       'https://api.themoviedb.org/3/tv/top_rated?api_key=$apikey';
   var onairtvseriesurl =
@@ -95,9 +94,9 @@ class _TvSeriesState extends State<TvSeries> {
             return Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  sliderlist(populartvseries, "Popular Now", "tv",20),
-                  sliderlist(onairtvseries, "On Air Now", "tv",20),
-                  sliderlist(topratedtvseries, "Top Rated", "tv",20)
+                  sliderlist(populartvseries, "Popular Now", "tv", 20),
+                  sliderlist(onairtvseries, "On Air Now", "tv", 20),
+                  sliderlist(topratedtvseries, "Top Rated", "tv", 20)
                 ]);
           }
         });

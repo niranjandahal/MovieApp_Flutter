@@ -284,7 +284,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
             Container(
                 height: 1050,
                 width: MediaQuery.of(context).size.width,
-                child: TabBarView(controller: _tabController, children: [
+                child: TabBarView(controller: _tabController, children: const [
                   TvSeries(),
                   Movie(),
                   Upcomming(),
