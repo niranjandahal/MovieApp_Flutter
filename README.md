@@ -6,6 +6,10 @@ A Flutter Project 'Movie App' made using TMDB API.
 
 You will need a developer account with TMDB, which will provide you an API key. With the API key, we will be able to fetch real-time data of movie/series
 
+
+<img src="https://github.com/niranjandahal/MovieApp_Flutter/blob/main/project-one.png">
+
+
 ## features
 - Watch trailers of new movies/series
 - search any movies/series
@@ -28,15 +32,15 @@ A Flutter application that displays trending movies, popular movies, top-rated m
 
 ## Screenshots
 
-![Screenshot 1](https://github.com/niranjandahal/MovieApp_Flutter/blob/main/flutter_01.png)
-
-![Screenshot 2](https://github.com/niranjandahal/MovieApp_Flutter/blob/main/flutter_05.png)
-
-![Screenshot 3](https://github.com/niranjandahal/MovieApp_Flutter/blob/main/flutter_06.png)
-
-![Screenshot 4](https://github.com/niranjandahal/MovieApp_Flutter/blob/main/flutter_08.png)
-
-![Screenshot 5](https://github.com/niranjandahal/MovieApp_Flutter/blob/main/flutter_10.png)
+<img src="https://github.com/niranjandahal/MovieApp_Flutter/blob/main/flutter_01.jpg" width="300">
+<img src="https://github.com/niranjandahal/MovieApp_Flutter/blob/main/flutter_02.jpg" width="300">
+<img src="https://github.com/niranjandahal/MovieApp_Flutter/blob/main/flutter_03.jpg" width="300">
+<img src="https://github.com/niranjandahal/MovieApp_Flutter/blob/main/flutter_04.jpg" width="300">
+<img src="https://github.com/niranjandahal/MovieApp_Flutter/blob/main/flutter_05.jpg" width="300">
+<img src="https://github.com/niranjandahal/MovieApp_Flutter/blob/main/flutter_06.jpg" width="300">
+<img src="https://github.com/niranjandahal/MovieApp_Flutter/blob/main/flutter_07.jpg" width="300">
+<img src="https://github.com/niranjandahal/MovieApp_Flutter/blob/main/flutter_08.jpg" width="300">
+<img src="https://github.com/niranjandahal/MovieApp_Flutter/blob/main/flutter_09.jpg" width="300">
 
 
 ## Features
