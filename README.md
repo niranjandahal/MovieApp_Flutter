@@ -6,6 +6,12 @@ A Flutter Project 'Movie App' made using TMDB API.
 
 You will need a developer account with TMDB, which will provide you an API key. With the API key, we will be able to fetch real-time data of movie/series
 
+
+<img src="https://github.com/niranjandahal/MovieApp_Flutter/blob/main/project-one.png" width="300">
+<img src="https://github.com/niranjandahal/MovieApp_Flutter/blob/main/project-one-model-images.png" width="300">
+
+
+
 ## features
 - Watch trailers of new movies/series
 - search any movies/series
