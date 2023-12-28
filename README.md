@@ -8,8 +8,6 @@ You will need a developer account with TMDB, which will provide you an API key. 
 
 
 <img src="https://github.com/niranjandahal/MovieApp_Flutter/blob/main/project-one.png">
-<img src="https://github.com/niranjandahal/MovieApp_Flutter/blob/main/project-one-model-images.png">
-
 
 
 ## features
