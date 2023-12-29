@@ -1,3 +1,6 @@
+#ignore this file
+/lib/apikey/apikey.dart
+
 # Miscellaneous
 *.class
 *.log
