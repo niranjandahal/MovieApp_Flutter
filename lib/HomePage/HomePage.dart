@@ -22,12 +22,13 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
+  String? apikey = dotenv.env['apikey'];
   List<Map<String, dynamic>> trendingweek = [];
   int uval = 1;
   Future<void> trendinglist(int checkerno) async {
     if (checkerno == 1) {
       var trendingweekurl =
-          'https://api.themoviedb.org/3/trending/all/week?api_key=${dotenv.env['apikey']}';
+          'https://api.themoviedb.org/3/trending/all/week?api_key=$apikey';
       var trendingweekresponse = await http.get(Uri.parse(trendingweekurl));
       if (trendingweekresponse.statusCode == 200) {
         var tempdata = jsonDecode(trendingweekresponse.body);

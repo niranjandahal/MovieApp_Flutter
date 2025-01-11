@@ -96,12 +96,14 @@ import 'package:flutter/services.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'HomePage/HomePage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 // The Main Entry Point
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SharedPreferences sp = await SharedPreferences.getInstance();
   String imagepath = sp.getString('imagepath') ?? '';
+  await dotenv.load(fileName: ".env");
   runApp(MyApp(imagepath: imagepath));
 
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
@@ -134,8 +136,8 @@ class ForcedMobileView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const double mobileWidth = 480;
-    const double mobileHeight = 1050;
+    const double mobileWidth = 500;
+    const double mobileHeight = 1150;
 
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
@@ -148,7 +150,14 @@ class ForcedMobileView extends StatelessWidget {
             'Zoom out browser to see full screen',
             style: TextStyle(fontSize: 30, color: Colors.black),
           ),
-          const SizedBox(height: 100),
+          const SizedBox(
+            height: 10,
+          ),
+          const Text(
+            'all features might not work in web',
+            style: TextStyle(fontSize: 30, color: Colors.black),
+          ),
+          const SizedBox(height: 60),
           Center(
             child: Container(
               width: mobileWidth,
