@@ -1,6 +1,6 @@
 {
-    "name": "r08fullmovieapp",
-    "short_name": "r08fullmovieapp",
+    "name": "p1movieapp",
+    "short_name": "p1movieapp",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

@@ -8,7 +8,9 @@ import '../HomePage/HomePage.dart';
 import '../RepeatedFunction/TrailerUI.dart';
 import '../RepeatedFunction/favoriateandshare.dart';
 import '../RepeatedFunction/repttext.dart';
-import 'package:r08fullmovieapp/apikey/apikey.dart';
+// import 'package:r08fullmovieapp/apikey/apikey.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -31,19 +33,19 @@ class _TvSeriesDetailsState extends State<TvSeriesDetails> {
   Future<void> tvseriesdetailfunc() async {
     var tvseriesdetailurl = 'https://api.themoviedb.org/3/tv/' +
         widget.id.toString() +
-        '?api_key=$apikey';
+        '?api_key=${dotenv.env['apikey']}';
     var tvseriesreviewurl = 'https://api.themoviedb.org/3/tv/' +
         widget.id.toString() +
-        '/reviews?api_key=$apikey';
+        '/reviews?api_key=${dotenv.env['apikey']}';
     var similarseriesurl = 'https://api.themoviedb.org/3/tv/' +
         widget.id.toString() +
-        '/similar?api_key=$apikey';
+        '/similar?api_key=${dotenv.env['apikey']}';
     var recommendseriesurl = 'https://api.themoviedb.org/3/tv/' +
         widget.id.toString() +
-        '/recommendations?api_key=$apikey';
+        '/recommendations?api_key=${dotenv.env['apikey']}';
     var seriestrailersurl = 'https://api.themoviedb.org/3/tv/' +
         widget.id.toString() +
-        '/videos?api_key=$apikey';
+        '/videos?api_key=${dotenv.env['apikey']}';
     // 'https://api.themoviedb.org/3/tv/' +
     //     widget.id.toString() +
     //     '/videos?api_key=$apikey';

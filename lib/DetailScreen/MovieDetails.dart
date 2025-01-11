@@ -1,7 +1,8 @@
 import 'dart:convert';
 import 'package:flutter/gestures.dart';
 import 'package:r08fullmovieapp/RepeatedFunction/sliderlist.dart';
-import 'package:r08fullmovieapp/apikey/apikey.dart';
+// import 'package:r08fullmovieapp/apikey/apikey.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:r08fullmovieapp/HomePage/HomePage.dart';
@@ -36,19 +37,19 @@ class _MovieDetailsState extends State<MovieDetails> {
   Future Moviedetails() async {
     var moviedetailurl = 'https://api.themoviedb.org/3/movie/' +
         widget.id.toString() +
-        '?api_key=$apikey';
+        '?api_key=${dotenv.env['apikey']}';
     var UserReviewurl = 'https://api.themoviedb.org/3/movie/' +
         widget.id.toString() +
-        '/reviews?api_key=$apikey';
+        '/reviews?api_key=${dotenv.env['apikey']}';
     var similarmoviesurl = 'https://api.themoviedb.org/3/movie/' +
         widget.id.toString() +
-        '/similar?api_key=$apikey';
+        '/similar?api_key=${dotenv.env['apikey']}';
     var recommendedmoviesurl = 'https://api.themoviedb.org/3/movie/' +
         widget.id.toString() +
-        '/recommendations?api_key=$apikey';
+        '/recommendations?api_key=${dotenv.env['apikey']}';
     var movietrailersurl = 'https://api.themoviedb.org/3/movie/' +
         widget.id.toString() +
-        '/videos?api_key=$apikey';
+        '/videos?api_key=${dotenv.env['apikey']}';
 
     var moviedetailresponse = await http.get(Uri.parse(moviedetailurl));
     if (moviedetailresponse.statusCode == 200) {
