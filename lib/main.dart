@@ -213,7 +213,7 @@ class _IntermediateScreenState extends State<IntermediateScreen> {
                   margin: const EdgeInsets.only(bottom: 10),
                   decoration: const BoxDecoration(
                     image: DecorationImage(
-                        image: AssetImage('asset/icon.png'),
+                        image: AssetImage('assets/icon.png'),
                         fit: BoxFit.contain),
                   ),
                 ),
