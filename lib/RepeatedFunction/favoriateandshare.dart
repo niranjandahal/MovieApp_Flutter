@@ -10,7 +10,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class addtofavoriate extends StatefulWidget {
   var id, type, Details;
-  addtofavoriate({
+  addtofavoriate({super.key, 
     this.id,
     this.type,
     this.Details,
@@ -86,7 +86,7 @@ class _addtofavoriateState extends State<addtofavoriate> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
         height: 80,
         width: MediaQuery.of(context).size.width,
         child:
@@ -127,7 +127,7 @@ class _addtofavoriateState extends State<addtofavoriate> {
                       ),
                     );
                   } else {
-                    return Container(
+                    return SizedBox(
                       height: 55,
                       width: MediaQuery.of(context).size.width,
                     );
@@ -145,7 +145,7 @@ class _addtofavoriateState extends State<addtofavoriate> {
                       title: normaltext(
                         "Movie Hunt By Niranjan",
                       ),
-                      content: Container(
+                      content: SizedBox(
                         height: 180,
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,

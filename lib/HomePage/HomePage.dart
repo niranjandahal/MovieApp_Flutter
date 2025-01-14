@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:r08fullmovieapp/DetailScreen/checker.dart';
@@ -76,19 +77,22 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    TabController _tabController = TabController(length: 3, vsync: this);
+    TabController tabController = TabController(length: 3, vsync: this);
 
     return Scaffold(
         drawer: drawerfunc(),
         backgroundColor: Color.fromRGBO(18, 18, 18, 0.5),
         body: CustomScrollView(physics: BouncingScrollPhysics(), slivers: [
           SliverAppBar(
+              iconTheme: const IconThemeData(
+                  color: Colors.white), // Set the drawer icon color to white
+
               backgroundColor: Color.fromRGBO(18, 18, 18, 0.9),
               title: //switch between the trending this week and trending today
                   Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('Trending' + ' 🔥',
+                  Text('Trending' ' 🔥',
                       style: TextStyle(
                           color: Colors.white.withOpacity(0.8), fontSize: 16)),
                   SizedBox(width: 10),
@@ -111,6 +115,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                         value: uval,
                         items: [
                           DropdownMenuItem(
+                            value: 1,
                             child: Text(
                               'Weekly',
                               style: TextStyle(
@@ -119,9 +124,9 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                                 fontSize: 16,
                               ),
                             ),
-                            value: 1,
                           ),
                           DropdownMenuItem(
+                            value: 2,
                             child: Text(
                               'Daily',
                               style: TextStyle(
@@ -130,7 +135,6 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                                 fontSize: 16,
                               ),
                             ),
-                            value: 2,
                           ),
                         ],
                         onChanged: (value) {
@@ -201,6 +205,8 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                                                           .spaceBetween,
                                                   children: [
                                                     Container(
+                                                      margin: EdgeInsets.only(
+                                                          left: 10, bottom: 6),
                                                       child: Text(
                                                         ' # '
                                                         '${i['indexno'] + 1}',
@@ -210,8 +216,6 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                                                                     0.7),
                                                             fontSize: 18),
                                                       ),
-                                                      margin: EdgeInsets.only(
-                                                          left: 10, bottom: 6),
                                                     ),
                                                     Container(
                                                         margin: EdgeInsets.only(
@@ -268,26 +272,34 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
           SliverList(
               delegate: SliverChildListDelegate([
             searchbarfun(),
-            Container(
-                height: 45,
+            Padding(
+              padding: const EdgeInsets.only(left: 10, right: 10),
+              child: SizedBox(
+                height: 50,
                 width: MediaQuery.of(context).size.width,
                 child: TabBar(
-                    physics: BouncingScrollPhysics(),
-                    labelPadding: EdgeInsets.symmetric(horizontal: 25),
-                    isScrollable: true,
-                    controller: _tabController,
-                    indicator: BoxDecoration(
-                        borderRadius: BorderRadius.circular(30),
-                        color: Colors.amber.withOpacity(0.4)),
-                    tabs: [
-                      Tab(child: Tabbartext('Tv Series')),
-                      Tab(child: Tabbartext('Movies')),
-                      Tab(child: Tabbartext('Upcoming'))
-                    ])),
+                  dividerColor: Colors.transparent,
+                  physics: const BouncingScrollPhysics(),
+                  labelPadding: const EdgeInsets.symmetric(
+                      horizontal: 0), // Remove extra padding
+                  controller: tabController,
+                  indicator: BoxDecoration(
+                    color: Colors.amber.withOpacity(0.4),
+                    borderRadius: BorderRadius.circular(12), // Rounded corners
+                  ),
+                  tabs: [
+                    Tab(child: Center(child: Tabbartext('Tv Series'))),
+                    Tab(child: Center(child: Tabbartext('Movies'))),
+                    Tab(child: Center(child: Tabbartext('Upcoming')))
+                  ],
+                ),
+              ),
+            ),
             Container(
+                // color: Colors.red,
                 height: 1100,
                 width: MediaQuery.of(context).size.width,
-                child: TabBarView(controller: _tabController, children: const [
+                child: TabBarView(controller: tabController, children: const [
                   TvSeries(),
                   Movie(),
                   Upcomming(),

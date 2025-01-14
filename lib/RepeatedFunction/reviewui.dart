@@ -1,11 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:r08fullmovieapp/RepeatedFunction/repttext.dart';
 // import 'package:url_launcher/url_launcher.dart';
 
 class ReviewUI extends StatefulWidget {
   List revdeatils = [];
-  ReviewUI({required this.revdeatils});
+  ReviewUI({super.key, required this.revdeatils});
 
   @override
   State<ReviewUI> createState() => _ReviewUIState();
@@ -17,7 +16,7 @@ class _ReviewUIState extends State<ReviewUI> {
   @override
   Widget build(BuildContext context) {
     List REviewDetails = widget.revdeatils;
-    if (REviewDetails.length == 0) {
+    if (REviewDetails.isEmpty) {
       return Center();
     } else {
       return Column(
@@ -45,7 +44,7 @@ class _ReviewUIState extends State<ReviewUI> {
                     children: [
                       showall == false
                           ? Text(
-                              'All Reviews ' + '${REviewDetails.length} ',
+                              'All Reviews ' '${REviewDetails.length} ',
                               style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 16,
@@ -72,7 +71,7 @@ class _ReviewUIState extends State<ReviewUI> {
           //
           //show only one review
           showall == true
-              ? Container(
+              ? SizedBox(
                   height: MediaQuery.of(context).size.height * 0.65,
                   child: ListView.builder(
                     physics:  BouncingScrollPhysics(),

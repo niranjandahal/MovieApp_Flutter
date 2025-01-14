@@ -113,7 +113,7 @@ Future<void> main() async {
 // MyApp Widget
 class MyApp extends StatelessWidget {
   final String imagepath;
-  MyApp({super.key, required this.imagepath});
+  const MyApp({super.key, required this.imagepath});
 
   @override
   Widget build(BuildContext context) {

@@ -5,7 +5,6 @@ import 'package:r08fullmovieapp/RepeatedFunction/sliderlist.dart';
 // import 'package:r08fullmovieapp/apikey/apikey.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-
 class TvSeries extends StatefulWidget {
   const TvSeries({super.key});
 
@@ -39,6 +38,8 @@ class _TvSeriesState extends State<TvSeries> {
         });
       }
     } else {
+      print(dotenv.env['apikey']);
+      print("error");
       print(populartvresponse.statusCode);
     }
     /////////////////////////////////////////////
@@ -89,10 +90,10 @@ class _TvSeriesState extends State<TvSeries> {
     return FutureBuilder(
         future: tvseriesfunction(),
         builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting)
+          if (snapshot.connectionState == ConnectionState.waiting) {
             return Center(
                 child: CircularProgressIndicator(color: Colors.amber.shade400));
-          else {
+          } else {
             return Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

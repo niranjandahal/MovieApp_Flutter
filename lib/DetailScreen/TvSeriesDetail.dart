@@ -11,12 +11,11 @@ import '../RepeatedFunction/repttext.dart';
 // import 'package:r08fullmovieapp/apikey/apikey.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class TvSeriesDetails extends StatefulWidget {
   var id;
-  TvSeriesDetails({this.id});
+  TvSeriesDetails({super.key, this.id});
 
   @override
   State<TvSeriesDetails> createState() => _TvSeriesDetailsState();
@@ -31,21 +30,11 @@ class _TvSeriesDetailsState extends State<TvSeriesDetails> {
   List<Map<String, dynamic>> seriestrailerslist = [];
 
   Future<void> tvseriesdetailfunc() async {
-    var tvseriesdetailurl = 'https://api.themoviedb.org/3/tv/' +
-        widget.id.toString() +
-        '?api_key=${dotenv.env['apikey']}';
-    var tvseriesreviewurl = 'https://api.themoviedb.org/3/tv/' +
-        widget.id.toString() +
-        '/reviews?api_key=${dotenv.env['apikey']}';
-    var similarseriesurl = 'https://api.themoviedb.org/3/tv/' +
-        widget.id.toString() +
-        '/similar?api_key=${dotenv.env['apikey']}';
-    var recommendseriesurl = 'https://api.themoviedb.org/3/tv/' +
-        widget.id.toString() +
-        '/recommendations?api_key=${dotenv.env['apikey']}';
-    var seriestrailersurl = 'https://api.themoviedb.org/3/tv/' +
-        widget.id.toString() +
-        '/videos?api_key=${dotenv.env['apikey']}';
+    var tvseriesdetailurl = 'https://api.themoviedb.org/3/tv/${widget.id}?api_key=${dotenv.env['apikey']}';
+    var tvseriesreviewurl = 'https://api.themoviedb.org/3/tv/${widget.id}/reviews?api_key=${dotenv.env['apikey']}';
+    var similarseriesurl = 'https://api.themoviedb.org/3/tv/${widget.id}/similar?api_key=${dotenv.env['apikey']}';
+    var recommendseriesurl = 'https://api.themoviedb.org/3/tv/${widget.id}/recommendations?api_key=${dotenv.env['apikey']}';
+    var seriestrailersurl = 'https://api.themoviedb.org/3/tv/${widget.id}/videos?api_key=${dotenv.env['apikey']}';
     // 'https://api.themoviedb.org/3/tv/' +
     //     widget.id.toString() +
     //     '/videos?api_key=$apikey';
@@ -272,8 +261,7 @@ class _TvSeriesDetailsState extends State<TvSeriesDetails> {
                       ),
                       Container(
                           padding: EdgeInsets.only(left: 10, top: 20),
-                          child: boldtext("Status : " +
-                              TvSeriesDetails[0]['status'].toString())),
+                          child: boldtext("Status : ${TvSeriesDetails[0]['status']}")),
                       //created by
                       Container(
                           padding: EdgeInsets.only(left: 10, top: 20),
@@ -301,10 +289,8 @@ class _TvSeriesDetailsState extends State<TvSeriesDetails> {
                                         CircleAvatar(
                                             radius: 45,
                                             backgroundImage: NetworkImage(
-                                                'https://image.tmdb.org/t/p/w500' +
-                                                    TvSeriesDetails[index + 4]
-                                                            ['creatorprofile']
-                                                        .toString())),
+                                                'https://image.tmdb.org/t/p/w500${TvSeriesDetails[index + 4]
+                                                            ['creatorprofile']}')),
                                         SizedBox(height: 10),
                                         genrestext(TvSeriesDetails[index + 4]
                                                 ['creator']
@@ -314,13 +300,11 @@ class _TvSeriesDetailsState extends State<TvSeriesDetails> {
                               })),
                       Container(
                           padding: EdgeInsets.only(left: 10, top: 20),
-                          child: normaltext("Total Seasons : " +
-                              tvseriesdetaildata['seasons'].length.toString())),
+                          child: normaltext("Total Seasons : ${tvseriesdetaildata['seasons'].length}")),
                       //airdate
                       Container(
                           padding: EdgeInsets.only(left: 10, top: 20),
-                          child: normaltext("Release date : " +
-                              TvSeriesDetails[0]['releasedate'].toString())),
+                          child: normaltext("Release date : ${TvSeriesDetails[0]['releasedate']}")),
                       sliderlist(similarserieslist, 'Similar Series', 'tv',
                           similarserieslist.length),
                       sliderlist(recommendserieslist, 'Recommended Series',

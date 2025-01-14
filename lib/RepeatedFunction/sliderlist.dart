@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:r08fullmovieapp/DetailScreen/checker.dart';
 import 'package:r08fullmovieapp/RepeatedFunction/repttext.dart';
 import '../DetailScreen/MovieDetails.dart';
 import '../DetailScreen/TvSeriesDetail.dart';
@@ -11,7 +9,7 @@ Widget sliderlist(
     Padding(
         padding: const EdgeInsets.only(left: 10.0, top: 15, bottom: 40),
         child: tittletext(categorytittle)),
-    Container(
+    SizedBox(
         height: 250,
         child: ListView.builder(
             physics: BouncingScrollPhysics(),

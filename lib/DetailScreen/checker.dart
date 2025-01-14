@@ -5,7 +5,7 @@ import 'TvSeriesDetail.dart';
 class descriptioncheckui extends StatefulWidget {
   var newid;
   var newtype;
-  descriptioncheckui(this.newid, this.newtype);
+  descriptioncheckui(this.newid, this.newtype, {super.key});
 
   @override
   State<descriptioncheckui> createState() => _descriptioncheckuiState();

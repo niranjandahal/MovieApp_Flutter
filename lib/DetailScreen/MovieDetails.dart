@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'package:flutter/gestures.dart';
 import 'package:r08fullmovieapp/RepeatedFunction/sliderlist.dart';
 // import 'package:r08fullmovieapp/apikey/apikey.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
@@ -9,18 +8,14 @@ import 'package:r08fullmovieapp/HomePage/HomePage.dart';
 import '../RepeatedFunction/TrailerUI.dart';
 import '../RepeatedFunction/favoriateandshare.dart';
 import '../RepeatedFunction/repttext.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'dart:convert';
-import 'package:fluttertoast/fluttertoast.dart';
-import 'package:r08fullmovieapp/SqfLitelocalstorage/NoteDbHelper.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../RepeatedFunction/reviewui.dart';
 
 class MovieDetails extends StatefulWidget {
   var id;
-  MovieDetails({this.id});
+  MovieDetails({super.key, this.id});
   @override
   State<MovieDetails> createState() => _MovieDetailsState();
 }
@@ -35,21 +30,11 @@ class _MovieDetailsState extends State<MovieDetails> {
   List MoviesGeneres = [];
 
   Future Moviedetails() async {
-    var moviedetailurl = 'https://api.themoviedb.org/3/movie/' +
-        widget.id.toString() +
-        '?api_key=${dotenv.env['apikey']}';
-    var UserReviewurl = 'https://api.themoviedb.org/3/movie/' +
-        widget.id.toString() +
-        '/reviews?api_key=${dotenv.env['apikey']}';
-    var similarmoviesurl = 'https://api.themoviedb.org/3/movie/' +
-        widget.id.toString() +
-        '/similar?api_key=${dotenv.env['apikey']}';
-    var recommendedmoviesurl = 'https://api.themoviedb.org/3/movie/' +
-        widget.id.toString() +
-        '/recommendations?api_key=${dotenv.env['apikey']}';
-    var movietrailersurl = 'https://api.themoviedb.org/3/movie/' +
-        widget.id.toString() +
-        '/videos?api_key=${dotenv.env['apikey']}';
+    var moviedetailurl = 'https://api.themoviedb.org/3/movie/${widget.id}?api_key=${dotenv.env['apikey']}';
+    var UserReviewurl = 'https://api.themoviedb.org/3/movie/${widget.id}/reviews?api_key=${dotenv.env['apikey']}';
+    var similarmoviesurl = 'https://api.themoviedb.org/3/movie/${widget.id}/similar?api_key=${dotenv.env['apikey']}';
+    var recommendedmoviesurl = 'https://api.themoviedb.org/3/movie/${widget.id}/recommendations?api_key=${dotenv.env['apikey']}';
+    var movietrailersurl = 'https://api.themoviedb.org/3/movie/${widget.id}/videos?api_key=${dotenv.env['apikey']}';
 
     var moviedetailresponse = await http.get(Uri.parse(moviedetailurl));
     if (moviedetailresponse.statusCode == 200) {
@@ -265,8 +250,7 @@ class _MovieDetailsState extends State<MovieDetails> {
                                       color: Color.fromRGBO(25, 25, 25, 1),
                                       borderRadius: BorderRadius.circular(10)),
                                   child: genrestext(
-                                      MovieDetails[0]['runtime'].toString() +
-                                          ' min'))
+                                      '${MovieDetails[0]['runtime']} min'))
                             ],
                           )
                         ],
@@ -285,16 +269,13 @@ class _MovieDetailsState extends State<MovieDetails> {
                       ),
                       Padding(
                           padding: EdgeInsets.only(left: 20, top: 20),
-                          child: normaltext('Release Date : ' +
-                              MovieDetails[0]['release_date'].toString())),
+                          child: normaltext('Release Date : ${MovieDetails[0]['release_date']}')),
                       Padding(
                           padding: EdgeInsets.only(left: 20, top: 20),
-                          child: normaltext('Budget : ' +
-                              MovieDetails[0]['budget'].toString())),
+                          child: normaltext('Budget : ${MovieDetails[0]['budget']}')),
                       Padding(
                           padding: EdgeInsets.only(left: 20, top: 20),
-                          child: normaltext('Revenue : ' +
-                              MovieDetails[0]['revenue'].toString())),
+                          child: normaltext('Revenue : ${MovieDetails[0]['revenue']}')),
                       sliderlist(similarmovieslist, "Similar Movies", "movie",
                           similarmovieslist.length),
                       sliderlist(recommendedmovieslist, "Recommended Movies",

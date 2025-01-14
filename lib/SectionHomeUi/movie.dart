@@ -94,10 +94,10 @@ class _MovieState extends State<Movie> {
     return FutureBuilder(
         future: moviesfunction(),
         builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting)
+          if (snapshot.connectionState == ConnectionState.waiting) {
             return Center(
                 child: CircularProgressIndicator(color: Colors.amber.shade400));
-          else {
+          } else {
             return Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

@@ -137,12 +137,12 @@ class _searchbarfunState extends State<searchbarfun> {
 
               //if textfield has focus and search result is not empty then display search result
 
-              searchtext.text.length > 0
+              searchtext.text.isNotEmpty
                   ? FutureBuilder(
                       future: searchlistfunction(val1),
                       builder: (context, snapshot) {
                         if (snapshot.connectionState == ConnectionState.done) {
-                          return Container(
+                          return SizedBox(
                               height: 400,
                               child: ListView.builder(
                                   itemCount: searchresult.length,
@@ -305,7 +305,7 @@ class _searchbarfunState extends State<searchbarfun> {
                                                           ),
                                                         ),
 
-                                                        Container(
+                                                        SizedBox(
                                                             width: MediaQuery.of(
                                                                         context)
                                                                     .size

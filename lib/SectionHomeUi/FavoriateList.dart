@@ -36,7 +36,7 @@ class _FavoriateMoviesState extends State<FavoriateMovies> {
       body: SingleChildScrollView(
           child: Column(
         children: [
-          Container(
+          SizedBox(
             height: MediaQuery.of(context).size.height * 0.07,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -56,19 +56,19 @@ class _FavoriateMoviesState extends State<FavoriateMovies> {
                   value: svalue,
                   items: [
                     DropdownMenuItem(
+                      value: 1,
                       child: Text('View All',
                           style: TextStyle(color: Colors.white)),
-                      value: 1,
                     ),
                     DropdownMenuItem(
+                      value: 2,
                       child: Text('Sort by Name',
                           style: TextStyle(color: Colors.white)),
-                      value: 2,
                     ),
                     DropdownMenuItem(
+                      value: 3,
                       child: Text('Sort by Rating',
                           style: TextStyle(color: Colors.white)),
-                      value: 3,
                     ),
                   ],
                   onChanged: (value) {
@@ -82,7 +82,7 @@ class _FavoriateMoviesState extends State<FavoriateMovies> {
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Container(
+            child: SizedBox(
               height: MediaQuery.of(context).size.height * 0.8,
               //query all data from database and show in listview builder here
               child: FutureBuilder(

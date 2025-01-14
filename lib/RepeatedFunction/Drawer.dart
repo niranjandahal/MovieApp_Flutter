@@ -1,9 +1,5 @@
-import 'package:flutter/gestures.dart';
-import 'package:image_picker/image_picker.dart';
-import 'package:image_cropper/image_cropper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:r08fullmovieapp/HomePage/HomePage.dart';
 import 'package:r08fullmovieapp/SectionHomeUi/FavoriateList.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -14,7 +10,7 @@ import 'dart:io';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class drawerfunc extends StatefulWidget {
-  drawerfunc({
+  const drawerfunc({
     super.key,
   });
 
@@ -120,10 +116,9 @@ class _drawerfuncState extends State<drawerfunc> {
                             backgroundColor: Color.fromRGBO(18, 18, 18, 0.9),
                             title: Text('Our Blogs'),
                           ),
-                          body: WebViewWidget(controller: WebViewController(
-                             
-                             
-                          ),)
+                          body: WebViewWidget(
+                            controller: WebViewController(),
+                          )
 
                           // body: WebView(
                           //   initialUrl: 'https://niranjandahal.com.np/',

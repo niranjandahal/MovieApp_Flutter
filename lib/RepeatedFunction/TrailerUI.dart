@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:webview_flutter/webview_flutter.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class trailerwatch extends StatefulWidget {
   var trailerytid;
-  trailerwatch({this.trailerytid});
+  trailerwatch({super.key, this.trailerytid});
 
   @override
   State<trailerwatch> createState() => _trailerwatchState();
