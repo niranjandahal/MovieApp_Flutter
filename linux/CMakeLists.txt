@@ -9,6 +9,7 @@ set(BINARY_NAME "r08fullmovieapp")
 # https://wiki.gnome.org/HowDoI/ChooseApplicationID
 set(APPLICATION_ID "com.example.r08fullmovieapp")
 
+
 # Explicitly opt in to modern CMake behaviors to avoid warnings with recent
 # versions of CMake.
 cmake_policy(SET CMP0063 NEW)
