@@ -1,6 +1,6 @@
-# Movie Hunt
+# Movie Hunt : https://movie-app-flutter-zlqp.vercel.app/
 
-A Flutter Project 'Movie App' made using TMDB API.
+A Flutter Project 'Movie App' made using TMDB API. above preview site. also all features won't work in above preview link as it forcefully tries to show applicaiton using web.
 
 ## Getting Started
 
@@ -21,33 +21,11 @@ You will need a developer account with TMDB, which will provide you an API key. 
 - Popular now  movies/series
 - Top-rated  movies/series
 - Upcomming section
-
-# Movie Hunt
-
-![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
-![Coverage](https://img.shields.io/badge/coverage-90%25-green)
-![Version](https://img.shields.io/badge/version-v1.0-blue)
-
-A Flutter application that displays trending movies, popular movies, top-rated movies, and provides movie descriptions, recommendations, and search functionality.
-
-## Screenshots
-
-<img src="https://github.com/niranjandahal/MovieApp_Flutter/blob/main/flutter_01.jpg" width="300">
-<img src="https://github.com/niranjandahal/MovieApp_Flutter/blob/main/flutter_02.jpg" width="300">
-<img src="https://github.com/niranjandahal/MovieApp_Flutter/blob/main/flutter_03.jpg" width="300">
-<img src="https://github.com/niranjandahal/MovieApp_Flutter/blob/main/flutter_04.jpg" width="300">
-<img src="https://github.com/niranjandahal/MovieApp_Flutter/blob/main/flutter_05.jpg" width="300">
-<img src="https://github.com/niranjandahal/MovieApp_Flutter/blob/main/flutter_06.jpg" width="300">
-<img src="https://github.com/niranjandahal/MovieApp_Flutter/blob/main/flutter_07.jpg" width="300">
-<img src="https://github.com/niranjandahal/MovieApp_Flutter/blob/main/flutter_08.jpg" width="300">
-<img src="https://github.com/niranjandahal/MovieApp_Flutter/blob/main/flutter_09.jpg" width="300">
-
-
-## Features
-
 - Browse trending movies, popular movies, and top-rated movies.
 - View detailed movie descriptions, including synopsis, cast, and crew.
 - Get recommendations for similar movies based on the selected movie.
+
+## features to be addeed  
 - Search for movies, actors, and directors.
 - View search results and detailed information about movies and people.
 
@@ -72,16 +50,40 @@ A Flutter application that displays trending movies, popular movies, top-rated m
 
 2.Navigate to the project directory:
     
-    cd movie-app
+    cd MovieApp_Flutter
 
 3.Install dependencies:
    
       flutter pub get
 
-4.Run the app
+4.create .env file at root of this project and place your tmdb api key
+
+      apikey = "yourtmdbapikey"
+
+
+5.Run the app
 
      flutter run
 
+# Movie Hunt
+
+![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
+![Coverage](https://img.shields.io/badge/coverage-90%25-green)
+![Version](https://img.shields.io/badge/version-v1.0-blue)
+
+A Flutter application that displays trending movies, popular movies, top-rated movies, and provides movie descriptions, recommendations, and search functionality.
+
+## Screenshots
+
+<img src="https://github.com/niranjandahal/MovieApp_Flutter/blob/main/flutter_01.jpg" width="300">
+<img src="https://github.com/niranjandahal/MovieApp_Flutter/blob/main/flutter_02.jpg" width="300">
+<img src="https://github.com/niranjandahal/MovieApp_Flutter/blob/main/flutter_03.jpg" width="300">
+<img src="https://github.com/niranjandahal/MovieApp_Flutter/blob/main/flutter_04.jpg" width="300">
+<img src="https://github.com/niranjandahal/MovieApp_Flutter/blob/main/flutter_05.jpg" width="300">
+<img src="https://github.com/niranjandahal/MovieApp_Flutter/blob/main/flutter_06.jpg" width="300">
+<img src="https://github.com/niranjandahal/MovieApp_Flutter/blob/main/flutter_07.jpg" width="300">
+<img src="https://github.com/niranjandahal/MovieApp_Flutter/blob/main/flutter_08.jpg" width="300">
+<img src="https://github.com/niranjandahal/MovieApp_Flutter/blob/main/flutter_09.jpg" width="300">
 
 ## Contributing
 Contributions are welcome! If you find any bugs or want to contribute new features, please follow these steps:
