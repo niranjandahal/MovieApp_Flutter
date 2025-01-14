@@ -1,6 +1,6 @@
 # Movie Hunt : https://movie-app-flutter-zlqp.vercel.app/
 
-A Flutter Project 'Movie App' made using TMDB API. above preview site. also all features won't work in above preview link as it forcefully tries to show applicaiton using web.
+A Flutter Project 'Movie App' made using TMDB API. Also all features won't work in above preview link as it forcefully tries to show applicaiton using web.
 
 ## Getting Started
 
