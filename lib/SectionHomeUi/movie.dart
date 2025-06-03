@@ -27,8 +27,8 @@ class _MovieState extends State<Movie> {
         'https://api.themoviedb.org/3/movie/now_playing?api_key=${dotenv.env['apikey']}';
     var topratedmoviesurl =
         'https://api.themoviedb.org/3/movie/top_rated?api_key=${dotenv.env['apikey']}';
-    var latestmoviesurl =
-        'https://api.themoviedb.org/3/movie/latest?api_key=${dotenv.env['apikey']}';
+    // var latestmoviesurl =
+    //     'https://api.themoviedb.org/3/movie/latest?api_key=${dotenv.env['apikey']}';
     /////////////////////////////////
     var popularmoviesresponse = await http.get(Uri.parse(popularmoviesurl));
     if (popularmoviesresponse.statusCode == 200) {

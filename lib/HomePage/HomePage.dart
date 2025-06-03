@@ -179,7 +179,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                                           context,
                                           MaterialPageRoute(
                                               builder: (context) =>
-                                                  descriptioncheckui(i['id'],
+                                                  Descriptioncheckui(i['id'],
                                                       i['media_type'])));
                                     },
                                     child: Container(

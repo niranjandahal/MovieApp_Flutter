@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:r08fullmovieapp/DetailScreen/MovieDetails.dart';
 import 'TvSeriesDetail.dart';
 
-class descriptioncheckui extends StatefulWidget {
+class Descriptioncheckui extends StatefulWidget {
   var newid;
   var newtype;
-  descriptioncheckui(this.newid, this.newtype, {super.key});
+  Descriptioncheckui(this.newid, this.newtype, {super.key});
 
   @override
-  State<descriptioncheckui> createState() => _descriptioncheckuiState();
+  State<Descriptioncheckui> createState() => _DescriptioncheckuiState();
 }
 
-class _descriptioncheckuiState extends State<descriptioncheckui> {
+class _DescriptioncheckuiState extends State<Descriptioncheckui> {
   checktype() {
     if (widget.newtype.toString() == 'movie') {
       return MovieDetails(
