@@ -3,9 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:r08fullmovieapp/RepeatedFunction/sliderlist.dart';
 import '../RepeatedFunction/repttext.dart';
-// import 'package:r08fullmovieapp/apikey/apikey.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
-
+import 'package:r08fullmovieapp/apikey/apikey.dart';
+// import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class Upcomming extends StatefulWidget {
   const Upcomming({super.key});
@@ -17,8 +16,11 @@ class Upcomming extends StatefulWidget {
 class _UpcommingState extends State<Upcomming> {
   List<Map<String, dynamic>> getUpcomminglist = [];
   Future<void> getUpcomming() async {
+    // var url = Uri.parse(
+    //     'https://api.themoviedb.org/3/movie/upcoming?api_key=${dotenv.env['apikey']}');4
+
     var url = Uri.parse(
-        'https://api.themoviedb.org/3/movie/upcoming?api_key=${dotenv.env['apikey']}');
+        'https://api.themoviedb.org/3/movie/upcoming?api_key=${api_key}');
     var response = await http.get(url);
     if (response.statusCode == 200) {
       var json = jsonDecode(response.body);

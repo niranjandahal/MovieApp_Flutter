@@ -2,8 +2,8 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:r08fullmovieapp/RepeatedFunction/sliderlist.dart';
-// import 'package:r08fullmovieapp/apikey/apikey.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:r08fullmovieapp/apikey/apikey.dart';
+// import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class TvSeries extends StatefulWidget {
   const TvSeries({super.key});
@@ -16,12 +16,30 @@ class _TvSeriesState extends State<TvSeries> {
   List<Map<String, dynamic>> populartvseries = [];
   List<Map<String, dynamic>> topratedtvseries = [];
   List<Map<String, dynamic>> onairtvseries = [];
+
+  ///
+  ///
+  ///using dotenv package for api key
+  ///
+  ///
+  ///
+  // var populartvseriesurl =
+  //     'https://api.themoviedb.org/3/tv/popular?api_key=${dotenv.env['apikey']}';
+  // var topratedtvseriesurl =
+  //     'https://api.themoviedb.org/3/tv/top_rated?api_key=${dotenv.env['apikey']}';
+  // var onairtvseriesurl =
+  //     'https://api.themoviedb.org/3/tv/on_the_air?api_key=${dotenv.env['apikey']}';
+
+  ///
+  ///
+  ///using the api key.dart file
+  ///
   var populartvseriesurl =
-      'https://api.themoviedb.org/3/tv/popular?api_key=${dotenv.env['apikey']}';
+      'https://api.themoviedb.org/3/tv/popular?api_key=${api_key}';
   var topratedtvseriesurl =
-      'https://api.themoviedb.org/3/tv/top_rated?api_key=${dotenv.env['apikey']}';
+      'https://api.themoviedb.org/3/tv/top_rated?api_key=${api_key}';
   var onairtvseriesurl =
-      'https://api.themoviedb.org/3/tv/on_the_air?api_key=${dotenv.env['apikey']}';
+      'https://api.themoviedb.org/3/tv/on_the_air?api_key=${api_key}';
   Future<void> tvseriesfunction() async {
     /////////////////////////////////////////////
     var populartvresponse = await http.get(Uri.parse(populartvseriesurl));
@@ -38,7 +56,7 @@ class _TvSeriesState extends State<TvSeries> {
         });
       }
     } else {
-      print(dotenv.env['apikey']);
+      // print(dotenv.env['apikey']);
       print("error");
       print(populartvresponse.statusCode);
     }

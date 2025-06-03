@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:r08fullmovieapp/RepeatedFunction/sliderlist.dart';
-// import 'package:r08fullmovieapp/apikey/apikey.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:r08fullmovieapp/apikey/apikey.dart';
+// import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:r08fullmovieapp/HomePage/HomePage.dart';
@@ -30,11 +30,26 @@ class _MovieDetailsState extends State<MovieDetails> {
   List MoviesGeneres = [];
 
   Future Moviedetails() async {
-    var moviedetailurl = 'https://api.themoviedb.org/3/movie/${widget.id}?api_key=${dotenv.env['apikey']}';
-    var UserReviewurl = 'https://api.themoviedb.org/3/movie/${widget.id}/reviews?api_key=${dotenv.env['apikey']}';
-    var similarmoviesurl = 'https://api.themoviedb.org/3/movie/${widget.id}/similar?api_key=${dotenv.env['apikey']}';
-    var recommendedmoviesurl = 'https://api.themoviedb.org/3/movie/${widget.id}/recommendations?api_key=${dotenv.env['apikey']}';
-    var movietrailersurl = 'https://api.themoviedb.org/3/movie/${widget.id}/videos?api_key=${dotenv.env['apikey']}';
+//
+//using flutter_dotenv package to load environment variables from .env file
+
+    // var moviedetailurl = 'https://api.themoviedb.org/3/movie/${widget.id}?api_key=${dotenv.env['apikey']}';
+    // var UserReviewurl = 'https://api.themoviedb.org/3/movie/${widget.id}/reviews?api_key=${dotenv.env['apikey']}';
+    // var similarmoviesurl = 'https://api.themoviedb.org/3/movie/${widget.id}/similar?api_key=${dotenv.env['apikey']}';
+    // var recommendedmoviesurl = 'https://api.themoviedb.org/3/movie/${widget.id}/recommendations?api_key=${dotenv.env['apikey']}';
+    // var movietrailersurl = 'https://api.themoviedb.org/3/movie/${widget.id}/videos?api_key=${dotenv.env['apikey']}';
+
+    //using apikey/apikey.dart file to get api key
+    var moviedetailurl =
+        'https://api.themoviedb.org/3/movie/${widget.id}?api_key=${api_key}';
+    var UserReviewurl =
+        'https://api.themoviedb.org/3/movie/${widget.id}/reviews?api_key=${api_key}';
+    var similarmoviesurl =
+        'https://api.themoviedb.org/3/movie/${widget.id}/similar?api_key=${api_key}';
+    var recommendedmoviesurl =
+        'https://api.themoviedb.org/3/movie/${widget.id}/recommendations?api_key=${api_key}';
+    var movietrailersurl =
+        'https://api.themoviedb.org/3/movie/${widget.id}/videos?api_key=${api_key}';
 
     var moviedetailresponse = await http.get(Uri.parse(moviedetailurl));
     if (moviedetailresponse.statusCode == 200) {
@@ -269,13 +284,16 @@ class _MovieDetailsState extends State<MovieDetails> {
                       ),
                       Padding(
                           padding: EdgeInsets.only(left: 20, top: 20),
-                          child: normaltext('Release Date : ${MovieDetails[0]['release_date']}')),
+                          child: normaltext(
+                              'Release Date : ${MovieDetails[0]['release_date']}')),
                       Padding(
                           padding: EdgeInsets.only(left: 20, top: 20),
-                          child: normaltext('Budget : ${MovieDetails[0]['budget']}')),
+                          child: normaltext(
+                              'Budget : ${MovieDetails[0]['budget']}')),
                       Padding(
                           padding: EdgeInsets.only(left: 20, top: 20),
-                          child: normaltext('Revenue : ${MovieDetails[0]['revenue']}')),
+                          child: normaltext(
+                              'Revenue : ${MovieDetails[0]['revenue']}')),
                       sliderlist(similarmovieslist, "Similar Movies", "movie",
                           similarmovieslist.length),
                       sliderlist(recommendedmovieslist, "Recommended Movies",

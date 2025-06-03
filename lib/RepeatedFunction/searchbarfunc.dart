@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:r08fullmovieapp/DetailScreen/checker.dart';
 import 'package:r08fullmovieapp/RepeatedFunction/repttext.dart';
-// import 'package:r08fullmovieapp/apikey/apikey.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:r08fullmovieapp/apikey/apikey.dart';
+// import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 import 'package:http/http.dart' as http;
 import 'package:fluttertoast/fluttertoast.dart';
@@ -20,9 +20,13 @@ class _searchbarfunState extends State<searchbarfun> {
   ////////////////////////////////search bar function/////////////////////////////////////////////
   List<Map<String, dynamic>> searchresult = [];
 
+
+//from apikey instaed of dotenv
+  String? apikey = api_key;
+
   Future<void> searchlistfunction(val) async {
     var searchurl =
-        'https://api.themoviedb.org/3/search/multi?api_key=${dotenv.env['apikey']}&query=$val';
+        'https://api.themoviedb.org/3/search/multi?api_key=${apikey}&query=$val';
     var searchresponse = await http.get(Uri.parse(searchurl));
     if (searchresponse.statusCode == 200) {
       var tempdata = jsonDecode(searchresponse.body);

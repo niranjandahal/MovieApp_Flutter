@@ -10,8 +10,8 @@ import '../SectionHomeUi/tvseries.dart';
 import '../SectionHomeUi/upcomming.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/services.dart';
-// import 'package:r08fullmovieapp/apikey/apikey.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:r08fullmovieapp/apikey/apikey.dart';
+// import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 import '../RepeatedFunction/Drawer.dart';
 
@@ -23,7 +23,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
-  String? apikey = dotenv.env['apikey'];
+  // String? apikey = dotenv.env['apikey'];
+  String? apikey = api_key; // Assuming you have a file named apikey.dart with
   List<Map<String, dynamic>> trendingweek = [];
   int uval = 1;
   Future<void> trendinglist(int checkerno) async {
@@ -46,7 +47,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
       }
     } else if (checkerno == 2) {
       var trendingweekurl =
-          'https://api.themoviedb.org/3/trending/all/day?api_key=${dotenv.env['apikey']}';
+          'https://api.themoviedb.org/3/trending/all/day?api_key=${apikey}';
       var trendingweekresponse = await http.get(Uri.parse(trendingweekurl));
       if (trendingweekresponse.statusCode == 200) {
         var tempdata = jsonDecode(trendingweekresponse.body);

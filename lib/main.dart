@@ -96,14 +96,14 @@ import 'package:flutter/services.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'HomePage/HomePage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
+// import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 // The Main Entry Point
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SharedPreferences sp = await SharedPreferences.getInstance();
   String imagepath = sp.getString('imagepath') ?? '';
-  await dotenv.load(fileName: ".env");
+  // await dotenv.load(fileName: ".env");
   runApp(MyApp(imagepath: imagepath));
 
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
