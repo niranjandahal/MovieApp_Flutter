@@ -271,39 +271,51 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
           //////////////////////////////////////////////End of Flexible bar///////////////////////////////////////////////////////////////
           SliverList(
               delegate: SliverChildListDelegate([
-            searchbarfun(),
-            Padding(
-              padding: const EdgeInsets.only(left: 10, right: 10),
-              child: SizedBox(
-                height: 50,
-                width: MediaQuery.of(context).size.width,
-                child: TabBar(
-                  dividerColor: Colors.transparent,
-                  physics: const BouncingScrollPhysics(),
-                  labelPadding: const EdgeInsets.symmetric(
-                      horizontal: 0), // Remove extra padding
-                  controller: tabController,
-                  indicator: BoxDecoration(
-                    color: Colors.amber.withOpacity(0.4),
-                    borderRadius: BorderRadius.circular(12), // Rounded corners
+            Container(
+              color: Color.fromRGBO(14, 14, 14, 1),
+              child: Column(
+                children: [
+                  searchbarfun(),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10, right: 10),
+                    child: SizedBox(
+                      height: 50,
+                      width: MediaQuery.of(context).size.width,
+                      child: TabBar(
+                        dividerColor: Colors.transparent,
+                        // dividerColor: Color.fromRGBO(14, 14, 14, 1),
+
+                        physics: const BouncingScrollPhysics(),
+                        labelPadding: const EdgeInsets.symmetric(
+                            horizontal: 0), // Remove extra padding
+                        controller: tabController,
+                        indicator: BoxDecoration(
+                          color: Colors.amber.withOpacity(0.4),
+                          borderRadius:
+                              BorderRadius.circular(12), // Rounded corners
+                        ),
+                        tabs: [
+                          Tab(child: Center(child: Tabbartext('Tv Series'))),
+                          Tab(child: Center(child: Tabbartext('Movies'))),
+                          Tab(child: Center(child: Tabbartext('Upcoming')))
+                        ],
+                      ),
+                    ),
                   ),
-                  tabs: [
-                    Tab(child: Center(child: Tabbartext('Tv Series'))),
-                    Tab(child: Center(child: Tabbartext('Movies'))),
-                    Tab(child: Center(child: Tabbartext('Upcoming')))
-                  ],
-                ),
+                  Container(
+                      // color: Colors.red,
+                      height: 1100,
+                      width: MediaQuery.of(context).size.width,
+                      child: TabBarView(
+                          controller: tabController,
+                          children: const [
+                            TvSeries(),
+                            Movie(),
+                            Upcomming(),
+                          ]))
+                ],
               ),
             ),
-            Container(
-                // color: Colors.red,
-                height: 1100,
-                width: MediaQuery.of(context).size.width,
-                child: TabBarView(controller: tabController, children: const [
-                  TvSeries(),
-                  Movie(),
-                  Upcomming(),
-                ]))
           ]))
         ]));
   }
